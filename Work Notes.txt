@@ -1,0 +1,110 @@
+0. Create GitHub Repo
+    - add .gitignore: node
+    - add readme file
+
+1. Create Project folder
+- clone GitHub Repo
+    terminal --> git clone <repo_url>
+- create client folder
+- create server folder
+
+
+2. Install Client App
+- navigate to client folder
+    terminal --> cd client
+- install vite app with react template
+    terminal --> npm create vite . -- --template react
+    terminal --> npm install
+- clean the project
+    - delete src/asset folder
+    - delete src/App.css
+    - delete public/vite.svg
+- refacture App.jsx
+-----------------------------------------------------------------
+import './App.css'
+
+function App() {
+  return (
+    <>
+    <h1>Dashboard App</h1>
+    </>
+  )
+}
+
+export default App
+-----------------------------------------------------------------
+-create src/components folder
+- Install Route libraly
+    terminal --> npm install react-router-dom
+
+- Run client
+    terminal --> npm run dev
+
+Check React Query for query layering  - https://tanstack.com/query/latest/docs/framework/react/overview
+
+Configure main.jsx as:
+-----------------------------------------------------------------
+import { BrowserRouter } from 'react-router-dom'
+
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import React from 'react'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>,
+)
+-----------------------------------------------------------------
+
+
+3. Install tailwind css:
+- navigate to client folder
+    terminal --> cd client
+- install tailwind libraly
+    terminal --> npm install -D tailwindcss postcss autoprefixer
+- initialize tailwind
+    terminal --> npx tailwindcss init -p
+- install tailwind dependencies:
+	terminal --> npm i @headlessui/react
+	terminal --> npm i @heroicons/react
+
+- in tailwind.config.js add:
+-----------------------------------------------------------------
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+-----------------------------------------------------------------
+
+clear all data in index.css and add:
+-----------------------------------------------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+-----------------------------------------------------------------
+
+- Run Client
+    terminal --> cd client
+	terminal --> npm run dev
+
+4. Set SoftUni practice server
+- navigate to server folder
+    terminal --> cd server
+- download 'server-1.0.0.zip' practice server from https://github.com/softuni-practice-server/softuni-practice-server/releases/tag/v1.0.0
+- unzip the server in server folder
+    leave only server.js and data folder
+
+- Run server
+    terminal --> cd server
+    terminal --> node server.js
+
