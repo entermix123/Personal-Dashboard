@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
 @tailwind base;
+
+html {
+  @apply text-gray-800 bg-white; /* Replace with closest Tailwind color */
+}
+
+html.dark {
+  @apply text-gray-100 bg-gray-900; /* Replace with closest Tailwind color */
+}
+
 @tailwind components;
 @tailwind utilities;
+
+p {
+  @apply leading-[1.6];
+}
