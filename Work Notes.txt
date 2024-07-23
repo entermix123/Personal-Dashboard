@@ -21,8 +21,6 @@
     - delete public/vite.svg
 - refacture App.jsx
 -----------------------------------------------------------------
-import './App.css'
-
 function App() {
   return (
     <>
@@ -70,27 +68,46 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 - install tailwind dependencies:
 	terminal --> npm i @headlessui/react
 	terminal --> npm i @heroicons/react
+	terminal --> npm i tw-elements
+    terminal --> npm i @material-tailwind/react
 
 - in tailwind.config.js add:
 -----------------------------------------------------------------
-/** @type {import('tailwindcss').Config} */
-export default {
+import withMT from "@material-tailwind/react/utils/withMT";
+import plugin from "tw-elements/plugin.cjs";
+
+export default withMT({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
-}
------------------------------------------------------------------
+  darkMode: "class",
+  plugins: [plugin],
+});
 
-clear all data in index.css and add:
 -----------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
 @tailwind base;
+
+html {
+  @apply text-gray-800 bg-white; /* Replace with closest Tailwind color */
+}
+
+html.dark {
+  @apply text-gray-100 bg-gray-900; /* Replace with closest Tailwind color */
+}
+
 @tailwind components;
 @tailwind utilities;
+
+p {
+  @apply leading-[1.6];
+}
 -----------------------------------------------------------------
 
 - Run Client
@@ -108,3 +125,38 @@ clear all data in index.css and add:
     terminal --> cd server
     terminal --> node server.js
 
+
+5. Development flow:
+- tailwind dashboard components - https://tw-elements.com/docs/react/data/charts/
+- tailwind material components - https://www.material-tailwind.com/docs/react/guide/cra
+- free components - https://tailblocks.cc/
+
+- create conponent snippet
+In search field type '>snippets:Configure User Snippet' and find javascriptreact.json
+-----------------------------------------------------------------
+{
+	// Place your snippets for javascriptreact here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Function Component": {
+		"prefix": "comp",
+		"body": [
+			"export default function ${1:Component}() {",
+			"	return (",
+			"		$2",
+			"	);",
+			"}"
+		],
+		"description": "Create function component"
+	}
+}
+-----------------------------------------------------------------
+
+- navigate fast between files
+    search file - Ctrl + Shift + f
+
+- format current file
+    - Alt + Shift + f   with formatters
+    - Ctrl + Shift + p  with identation
