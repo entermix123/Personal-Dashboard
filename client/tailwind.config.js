@@ -8,8 +8,24 @@ export default withMT({
     "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // ... other extensions ...
+      backdropFilter: {
+        'none': 'none',
+      },
+    },
   },
   darkMode: "class",
-  plugins: [plugin],
+  plugins: [
+    plugin,
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.backdrop-filter-none': {
+          'backdrop-filter': 'none',
+          '-webkit-backdrop-filter': 'none',
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    }
+  ],
 });

@@ -3,17 +3,14 @@ Project Defense - ReactJS Course July 2024
 
 
 ## 1. Initialize Project
-- [ ] Initialize git repo
-- [ ] Add student practice server
-- [ ] Add base Vite react project as client
-- [ ] cleanup Client
-- [ ] Add project resouces
-- [ ] Convert html to jsx
-- [ ] Separate HTML into components
+- [x] Initialize git repo
+- [x] Add student practice server
+- [x] Add base Vite react project as client
+- [x] cleanup Client
 
 ## 2. React Router
-- [ ] Install react-router-dom
-- [ ] Setup react-router-dom
+- [x] Install react-router-dom
+- [x] Setup react-router-dom
 - [ ] Add routes in App.jsx
 - [ ] Add links in navigation
 
