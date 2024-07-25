@@ -1,26 +1,24 @@
 import { useState } from "react";
 import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import "./dashboard..css"; // Corrected the typo in file name
 import { Sidebar } from "../navbar/SideBar";
+import "./dashboard..css";
 
 export default function Dashboard() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <div className={`main-content bg-white transition-all duration-300 ${isDrawerOpen ? 'shifted' : ''}`}>
-      {!isDrawerOpen && (
-        <IconButton
-          variant="text"
-          size="lg"
-          onClick={() => setIsDrawerOpen(true)}
-          className="fixed top-4 left-4 z-50"
-        >
-          <Bars3Icon className="h-8 w-8 stroke-2" />
-        </IconButton>
-      )}
+    <div className={`dashboard-container ${isDrawerOpen ? 'shifted' : ''}`}>
+      <IconButton
+        variant="text"
+        size="lg"
+        onClick={() => setIsDrawerOpen(true)}
+        className={`sidebar-toggle ${isDrawerOpen ? 'hidden' : ''}`}
+      >
+        <Bars3Icon className="h-8 w-8 stroke-2" />
+      </IconButton>
       <Sidebar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
-      <section className="text-gray-600 body-font">
+      <section className="dashboard-content">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <div className="flex w-full mb-20 flex-wrap">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">

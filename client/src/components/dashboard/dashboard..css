@@ -1,20 +1,40 @@
-.main-content {
-  margin-left: 0;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: -4rem; /* Adjust based on the height of your navbar */
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
   transition: margin-left 0.3s;
 }
 
-.main-content.shifted {
+.sidebar-toggle {
+  position: fixed;
+  top: 1rem; /* Adjust to the height of your navbar */
+  left: 1rem;
+  z-index: 50;
+}
+
+.dashboard-content {
+  flex: 1;
+  margin-left: 0;
+  transition: margin-left 0.3s;
+  padding-top: 4rem; /* Adjust to the height of your navbar */
+}
+
+.dashboard-container.shifted .dashboard-content {
   margin-left: 500px; /* Adjust this value to match the width of your sidebar */
 }
 
-.no-blur {
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-.mantine-Drawer-root {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  background-color: white !important;
+.hidden {
+  display: none;
 }
