@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
+import "./sidebar.css";
 import {
   Typography,
   List,
@@ -49,15 +50,15 @@ export function Sidebar({ isDrawerOpen, setIsDrawerOpen }) {
   return (
     <Drawer
       open={isDrawerOpen}
-      className="shadow-none bg-white backdrop-filter-none"
+      className="shadow-none bg-white backdrop-filter-none border border-gray-300"
       overlayProps={{
         className: "fixed inset-0 bg-transparent pointer-events-none no-backdrop-blur",
       }}
       placement="left"
-      onClick={handleOverlayClick}      
+      onClick={handleOverlayClick}
     >
-      <div className="h-full w-full bg-white" onClick={(e) => e.stopPropagation()}>
-        <Card color="transparent" shadow={false} className="h-[calc(100vh-2rem)] w-full p-4">
+      <div className="h-full w-full bg-white border border-gray-300" onClick={(e) => e.stopPropagation()}>
+        <Card color="transparent" shadow={false} className="h-[calc(100vh-2rem)] w-full p-4 border border-gray-300">
           <div className="mb-2 flex items-center gap-4 p-4">
             <img
               src="https://docs.material-tailwind.com/img/logo-ct-dark.png"

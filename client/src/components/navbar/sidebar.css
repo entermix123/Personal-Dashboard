@@ -1,0 +1,4 @@
+.sidebar-container {
+    border: 1px solid #d1d5db; /* Tailwind's gray-300 color */
+    border-radius: 0.5rem; /* Optional: adjust border radius to fit your design */
+  }
