@@ -14,7 +14,6 @@ function App() {
             <Sidebar />
             <Routes>
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/home" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
             </Routes>
         </div>

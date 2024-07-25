@@ -1,9 +1,10 @@
 .main-content {
-  transition: margin-left 0.3s ease-in-out;
+  margin-left: 0;
+  transition: margin-left 0.3s;
 }
 
-.shrink {
-  margin-left: 256px; /* Adjust this value based on your sidebar width */
+.main-content.shifted {
+  margin-left: 500px; /* Adjust this value to match the width of your sidebar */
 }
 
 .no-blur {

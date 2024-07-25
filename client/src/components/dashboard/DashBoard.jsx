@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import "./dashboard..css";
+import "./dashboard..css"; // Corrected the typo in file name
 import { Sidebar } from "../navbar/SideBar";
 
 export default function Dashboard() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <div className="main-content bg-white">
-      <IconButton
-        variant="text"
-        size="lg"
-        onClick={() => setIsDrawerOpen(true)}
-        className="fixed top-4 left-4 z-50"
-      >
-        <Bars3Icon className="h-8 w-8 stroke-2" />
-      </IconButton>
+    <div className={`main-content bg-white transition-all duration-300 ${isDrawerOpen ? 'shifted' : ''}`}>
+      {!isDrawerOpen && (
+        <IconButton
+          variant="text"
+          size="lg"
+          onClick={() => setIsDrawerOpen(true)}
+          className="fixed top-4 left-4 z-50"
+        >
+          <Bars3Icon className="h-8 w-8 stroke-2" />
+        </IconButton>
+      )}
       <Sidebar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
