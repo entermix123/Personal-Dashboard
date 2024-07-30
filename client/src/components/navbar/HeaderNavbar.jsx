@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from "react";
 import {
   Navbar,
@@ -56,6 +57,8 @@ function ProfileMenu() {
   const closeMenu = () => setIsMenuOpen(false);
  
   return (
+
+    
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
       <MenuHandler>
         <Button
@@ -227,7 +230,6 @@ function NavList() {
   );
 }
 
-import { Link } from 'react-router-dom';
 export default function HeaderNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
 
@@ -241,11 +243,11 @@ export default function HeaderNavbar() {
     <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
-          as="a"
-          href="#"
+          as={Link}
+          to="/"
           className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
         >
-          DashBoss
+          DashBoard
         </Typography>
         <div className="hidden lg:block">
           <NavList />
@@ -261,12 +263,14 @@ export default function HeaderNavbar() {
         </IconButton>
 
         <div className="flex items-center space-x-4">
-          <Button as={Link} to="/login" size="sm" variant="text">
-            <span>Log In</span>
-          </Button>
           <Button size="sm" variant="text">
-            <span>Register</span>
+            <Link to="/login">Log In</Link>
           </Button>
+
+          <Button size="sm" variant="text">
+            <Link to="/register">Register</Link>
+          </Button>
+
           <ProfileMenu />
         </div>
       </div>

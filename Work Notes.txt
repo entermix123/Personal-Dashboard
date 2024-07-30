@@ -2,7 +2,7 @@
     - add .gitignore: node
     - add readme file
 
-1. Create Project folder
+1. Create Local Project folder
 - clone GitHub Repo
     terminal --> git clone <repo_url>
 - create client folder
@@ -156,7 +156,7 @@ In search field type '>snippets:Configure User Snippet' and find javascriptreact
 -----------------------------------------------------------------
 
 - navigate fast between files
-    search file - Ctrl + Shift + f
+    search file - Ctrl + p
 
 - format current file
     - Alt + Shift + f   with formatters
