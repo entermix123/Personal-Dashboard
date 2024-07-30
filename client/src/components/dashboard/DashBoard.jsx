@@ -3,12 +3,16 @@ import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Sidebar } from "../navbar/SideBar";
 import "./dashboard..css";
+import { useAuthContext } from "../../context/AuthContext";
 
 export default function Dashboard() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const {isAuthenticated} = useAuthContext()
 
   return (
     <div className={`dashboard-container ${isDrawerOpen ? 'shifted' : ''}`}>
+      {isAuthenticated
+      ? (
       <IconButton
         variant="text"
         size="lg"
@@ -17,6 +21,11 @@ export default function Dashboard() {
       >
         <Bars3Icon className="h-8 w-8 stroke-2" />
       </IconButton>
+      )
+      : (
+        <></>
+      )
+    }
       <Sidebar isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <section className="dashboard-content">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">

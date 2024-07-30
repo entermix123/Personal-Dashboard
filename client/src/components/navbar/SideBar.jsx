@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from "react";
+import { useAuthContext } from "../../context/AuthContext";
+import { useState } from "react";
 import "./sidebar.css";
 import {
   Typography,
@@ -33,8 +34,10 @@ import {
 } from "@heroicons/react/24/outline";
 
 export function Sidebar({ isDrawerOpen, setIsDrawerOpen }) {
-  const [open, setOpen] = React.useState(0);
-  const [openAlert, setOpenAlert] = React.useState(true);
+  const [open, setOpen] = useState(0);
+  const [openAlert, setOpenAlert] = useState(true);
+  const {isAuthenticated} = useAuthContext()
+
 
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);

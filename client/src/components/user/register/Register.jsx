@@ -61,6 +61,7 @@ export default function Register() {
                             size="lg"
                             placeholder="name@mail.com"
                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                            autoComplete="username"
                             labelProps={{
                                 className:
                                     "before:content-none after:content-none",
@@ -98,7 +99,7 @@ export default function Register() {
                         </Typography>
                         <Input
                             name="confirm-password"
-                            value={values.password}
+                            value={values['confirm-password']}
                             onChange={changeHandler}
                             type="password"
                             size="lg"

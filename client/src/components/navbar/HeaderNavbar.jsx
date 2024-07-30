@@ -26,6 +26,7 @@ import {
   RocketLaunchIcon,
   Bars2Icon,
 } from "@heroicons/react/24/solid";
+import { useAuthContext } from '../../context/AuthContext';
  
 // profile menu component
 const profileMenuItems = [
@@ -57,8 +58,6 @@ function ProfileMenu() {
   const closeMenu = () => setIsMenuOpen(false);
  
   return (
-
-    
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
       <MenuHandler>
         <Button
@@ -232,6 +231,7 @@ function NavList() {
 
 export default function HeaderNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const {isAuthenticated} = useAuthContext()
 
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
@@ -262,17 +262,29 @@ export default function HeaderNavbar() {
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
 
-        <div className="flex items-center space-x-4">
-          <Button size="sm" variant="text">
-            <Link to="/login">Log In</Link>
-          </Button>
+          
+          {!isAuthenticated
+            ? (
+            <div className="flex items-center space-x-4">
+            <Button size="sm" variant="text">
+              <Link to="/login">Log In</Link>
+            </Button>
 
-          <Button size="sm" variant="text">
-            <Link to="/register">Register</Link>
-          </Button>
-
-          <ProfileMenu />
-        </div>
+            <Button size="sm" variant="text">
+              <Link to="/register">Register</Link>
+            </Button>
+            </div>
+            )
+            : (
+            <div className="flex items-center space-x-4">
+            <Button size="sm" variant="text">
+              <Link to="/logout">Logout</Link>
+            </Button>
+            <ProfileMenu />
+            </div>
+            )
+          }
+            
       </div>
     </Navbar>
   );
