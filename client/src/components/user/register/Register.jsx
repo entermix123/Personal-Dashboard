@@ -21,14 +21,14 @@ export default function Register() {
     const registerHandler = async (values) => {
         // make simple validation for password match
         if (values.password !== values["confirm-password"]) {
-            return setError("Passwords missmatch"); // if passwords do not match show error
+            return setError("Passwords missmatch");             // if passwords do not match show error
         }
         try {
-            await register(values.email, values.password); // try to register with provided email and password
+            await register(values.email, values.password);      // try to register with provided email and password
 
-            navigate("/"); // navigate after successful register
+            navigate("/");                                      // navigate after successful register
         } catch (err) {
-            setError(err.message); // if error occurred show error message
+            setError(err.message);                              // if error occurred show error message
             console.error(err.message);
         }
     };
@@ -50,23 +50,21 @@ export default function Register() {
                 </Typography>
                 <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={submitHandler}>
                     <div className="mb-1 flex flex-col gap-6">
-                        <Typography
-                            variant="h6"
-                            color="blue-gray"
-                            className="-mb-3"
-                        >
-                            Your Email
-                        </Typography>
-                        <Input
-                            size="lg"
-                            placeholder="name@mail.com"
-                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                            autoComplete="username"
-                            labelProps={{
-                                className:
-                                    "before:content-none after:content-none",
-                            }}
-                        />
+                    <Typography variant="h6" color="blue-gray" className="-mb-3">
+                        Your Email
+                    </Typography>
+                    <Input
+                        size="lg"
+                        name="email"
+                        value={values.email}
+                        onChange={changeHandler}
+                        placeholder="name@mail.com"
+                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        autoComplete="email"
+                        labelProps={{
+                        className: "before:content-none after:content-none",
+                        }}
+                    />
 
                         <Typography
                             variant="h6"
