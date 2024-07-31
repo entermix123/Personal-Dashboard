@@ -6,14 +6,15 @@
 # You can start the project locally by following these steps:
 ## 1. Download the repo on your computer
 ## 2. Open the project with VSCode or other IDE
-  - install dependencies
-    * npm install
   - navigate to server folder and start server
       * terminal --> cd server
       * terminal --> node server.js
-  - navigate to client folder and start client
-    * terminal --> cd client
-    * terminal --> npm run dev
+  - navigate to client folder
+      * terminal --> cd client
+    - install dependencies
+      * terminal --> npm install
+    - start client
+      * terminal --> npm run dev
   - open the client in browser
     * browser --> http://localhost:5173/
 
