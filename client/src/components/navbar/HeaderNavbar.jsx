@@ -196,12 +196,12 @@ function NavListMenu() {
 // nav list component
 const navListItems = [
   {
-    label: "Account",
-    icon: UserCircleIcon,
+    label: "Companies",
+    icon: CubeTransparentIcon,
   },
   {
-    label: "Blocks",
-    icon: CubeTransparentIcon,
+    label: "Staff",
+    icon: UserCircleIcon,
   },
   {
     label: "Docs",
