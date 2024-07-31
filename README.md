@@ -1,5 +1,7 @@
 # Personal-Dashboard
-## Project Defense - ReactJS Course July 2024
+## Project Defense - ReactJS Course July 2024 - https://softuni.bg/trainings/4529/reactjs-june-2024
+## Project Description
+### The project is developed with basic functionalities in focus on company management, data visualization and business strategies.<br><br>
 
 # You can start the project locally by following these steps:
 ## 1. Download the repo on your computer
@@ -15,6 +17,8 @@
   - open the client in browser
     * browser --> http://localhost:5173/
 
+<br>
+
 ## The following is plan for developing this project:
 
 ## 1. Initialize Project
@@ -25,6 +29,8 @@
 
 ## 2. React Router
 - [x] Install react-router-dom
+- [x] Install Tailwind React
+- [x] Install Tailwind components depedencies
 - [x] Setup react-router-dom
 - [x] Add routes in App.jsx
 - [x] Add links in navigation
@@ -37,9 +43,13 @@
 
 ## 4. Page Implementations
 - [x] Home - Dhasboard
+  - [x] Add Dashboard Header navigation
+  - [x] Add Dashboard side bar navigation 
   - [x] Not Logged User
   - [x] Logged User
-- [x] User Login Form
+  - [ ] Add Footer
+- [x] Register Form
+- [x] Login Form
 - [x] Logout
 - [ ] User Details Page
   - [ ] Create Details Link
