@@ -12,7 +12,8 @@ export default function ContactUs() {
             marginWidth={0}
             title="map"
             scrolling="no"
-            src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+            // src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+            src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=DolniBogrov,Bulgaria&ie=UTF8&t=&z=12&iwloc=B&output=embed"
             style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
             />
         </div>
