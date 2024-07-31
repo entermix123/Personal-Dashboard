@@ -48,7 +48,7 @@
   - [x] Add Dashboard side bar navigation 
   - [x] Not Logged User
   - [x] Logged User
-  - [ ] Add Footer
+  - [x] Add Footer
 - [x] Register Form
 - [x] Login Form
 - [x] Logout
