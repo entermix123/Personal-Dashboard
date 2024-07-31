@@ -4,6 +4,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 import Logout from "../src/components/user/logout/Logout";
 import Register from "./components/user/register/Register";
 import HeaderNavbar from "./components/navbar/HeaderNavbar";
+import Footer from "./components/footer/Footer";
 import Dashboard from "./components/dashboard/DashBoard";
 import Login from "./components/user/login/Login";
 import "./index.css";
@@ -23,11 +24,12 @@ function App() {
                     {/* <Route path='/company' element={<CompanyList />} /> */}
                     {/* <Route path='/company/create' element={<CompanyCreate />} /> */}
                     {/* <Route path='/company/edit' element={<CompanyEdit />} /> */}
-                    {/* <Route path='/company/:companyId/details' element={<CompanyList />} /> */}
+                    {/* <Route path='/company/:companyId/details' element={<CompanyDetails />} /> */}
                     <Route path='/logout' element={<Logout />} />
 
                 </Routes>
             </div>
+            <Footer />
         </div>
         </AuthContextProvider>
     );
