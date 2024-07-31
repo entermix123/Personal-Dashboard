@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 
+import Logout from "../src/components/user/logout/Logout";
 import Register from "./components/user/register/Register";
 import HeaderNavbar from "./components/navbar/HeaderNavbar";
 import Dashboard from "./components/dashboard/DashBoard";
@@ -23,6 +24,7 @@ function App() {
                     {/* <Route path='/company/create' element={<CompanyCreate />} /> */}
                     {/* <Route path='/company/edit' element={<CompanyEdit />} /> */}
                     {/* <Route path='/company/:companyId/details' element={<CompanyList />} /> */}
+                    <Route path='/logout' element={<Logout />} />
 
                 </Routes>
             </div>

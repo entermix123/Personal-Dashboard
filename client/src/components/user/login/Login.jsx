@@ -44,6 +44,9 @@ export default function Login() {
                                 Your Email
                             </Typography>
                             <Input
+                                name="email"
+                                value={values.email}
+                                onChange={changeHandler}
                                 size="lg"
                                 placeholder="name@mail.com"
                                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
