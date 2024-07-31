@@ -116,27 +116,30 @@ function ProfileMenu() {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "@material-tailwind/html",
+    title: "About Us",
+    navigate: "/aboutus",
     description:
-      "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
+      "Read more about our company and its mission.",
   },
   {
-    title: "@material-tailwind/react",
+    title: "Contact Us",
+    navigate: "/contactus",
     description:
-      "Learn how to use @material-tailwind/react, packed with rich components for React.",
+      "Leave a message or reach out to our support team.",
   },
   {
-    title: "Material Tailwind PRO",
+    title: "Go PRO",
+    navigate: "/gopro",
     description:
-      "A complete set of UI Elements for building faster websites in less time.",
+      "Check out our premium features and services.",
   },
 ];
  
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
  
-  const renderItems = navListMenuItems.map(({ title, description }) => (
-    <a href="#" key={title}>
+  const renderItems = navListMenuItems.map(({ title, navigate, description }) => (
+    <Link to={navigate} key={title}>
       <MenuItem>
         <Typography variant="h6" color="blue-gray" className="mb-1">
           {title}
@@ -145,7 +148,7 @@ function NavListMenu() {
           {description}
         </Typography>
       </MenuItem>
-    </a>
+    </Link>
   ));
  
   return (
@@ -155,7 +158,7 @@ function NavListMenu() {
           <Typography as="a" href="#" variant="small" className="font-normal">
             <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
               <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
-              Pages{" "}
+              Info{" "}
               <ChevronDownIcon
                 strokeWidth={2}
                 className={`h-3 w-3 transition-transform ${

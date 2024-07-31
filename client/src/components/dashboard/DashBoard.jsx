@@ -2,8 +2,8 @@ import { useState } from "react";
 import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Sidebar } from "../navbar/SideBar";
-import "./dashboard..css";
 import { useAuthContext } from "../../context/AuthContext";
+import "./dashboard..css";
 
 export default function Dashboard() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

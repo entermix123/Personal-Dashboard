@@ -1,4 +1,5 @@
 import { Typography } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -39,8 +40,8 @@ export default function Footer() {
         </li>
         <li>
           <Typography
-            as="a"
-            href="#"
+            as={Link}
+            to="/contactus"
             color="blue-gray"
             className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
           >
