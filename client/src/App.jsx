@@ -9,6 +9,7 @@ import Dashboard from "./components/dashboard/DashBoard";
 import Login from "./components/user/login/Login";
 import ContactUs from "./components/contact-us/ContactUs";
 import CompanyCreate from "./components/company/company-create/CompanyCreate";
+import CompanyList from "./components/company/company-list/CompanyList";
 import "./index.css";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path='/company/create' element={<CompanyCreate />} />
-                    {/* <Route path='/company' element={<CompanyList />} /> */}
+                    <Route path='/company' element={<CompanyList />} />
                     {/* <Route path='/company/edit' element={<CompanyEdit />} /> */}
                     {/* <Route path='/company/:companyId/details' element={<CompanyDetails />} /> */}
                     <Route path='/contactus' element={<ContactUs />} />

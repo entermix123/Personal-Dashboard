@@ -53,5 +53,13 @@
 - [x] Login Form
 - [x] Logout
 - [ ] User Details Page
-  - [ ] Create Details Link
-  - [ ] Create Details Route
+- [ ] Add About Us Page
+- [ ] Add Contacts Page
+
+## 5. Company Functionalities
+- [x] Create Company Page
+- [ ] List Owned Companies
+- [ ] List All Companies
+- [ ] Edit Company Page
+- [ ] Delete Company Page
+  - [ ] Modal for company delete
