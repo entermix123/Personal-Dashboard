@@ -197,14 +197,17 @@ function NavListMenu() {
 const navListItems = [
   {
     label: "Companies",
+    navigate: "/company",
     icon: CubeTransparentIcon,
   },
   {
     label: "Staff",
+    navigate: "/staff",
     icon: UserCircleIcon,
   },
   {
     label: "Docs",
+    navigate: "/docs",
     icon: CodeBracketSquareIcon,
   },
 ];
@@ -213,11 +216,11 @@ function NavList() {
   return (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       <NavListMenu />
-      {navListItems.map(({ label, icon }, key) => (
+      {navListItems.map(({ label, navigate, icon }, key) => (
         <Typography
           key={label}
-          as="a"
-          href="#"
+          as={Link}
+          to={navigate}
           variant="small"
           color="gray"
           className="font-medium text-blue-gray-500"
