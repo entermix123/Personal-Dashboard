@@ -1339,6 +1339,30 @@
     	}
     };
     var seedData = {
+        companies:{
+            
+            "e2462435-ce81-4ed8-bdc0-469f151c5c98": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "name": "Company 1",
+                "category": "Service",
+                "location": "Europe",
+                "employees": 30,
+                "ravenue": 50000,
+                "_createdOn": 1722519316283,
+                "_id": "e2462435-ce81-4ed8-bdc0-469f151c5c98"
+            },
+
+            "4a0799ec-7537-49f9-8d67-baecc0d0f50e": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "name": "Company 2",
+                "category": "Production",
+                "location": "Bulgaria",
+                "employees": "50",
+                "ravenue": "80000",
+                "_createdOn": 1722519843637,
+                "_id": "4a0799ec-7537-49f9-8d67-baecc0d0f50e"
+            },
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
