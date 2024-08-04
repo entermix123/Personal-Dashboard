@@ -32,6 +32,7 @@ import {
   CubeTransparentIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 export function Sidebar({ isDrawerOpen, setIsDrawerOpen }) {
   const [open, setOpen] = useState(0);
@@ -186,12 +187,14 @@ export function Sidebar({ isDrawerOpen, setIsDrawerOpen }) {
               </ListItemPrefix>
               Settings
             </ListItem>
-            <ListItem>
+            <Link to="/logout">
+            <ListItem >
               <ListItemPrefix>
                 <PowerIcon className="h-5 w-5" />
               </ListItemPrefix>
               Log Out
             </ListItem>
+            </Link>
           </List>
           <Alert open={openAlert} className="mt-auto" onClose={() => setOpenAlert(false)}>
             <CubeTransparentIcon className="mb-4 h-12 w-12" />

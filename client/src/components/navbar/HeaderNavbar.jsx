@@ -32,22 +32,27 @@ import { useAuthContext } from '../../context/AuthContext';
 const profileMenuItems = [
   {
     label: "My Profile",
+    navigate: "/#",
     icon: UserCircleIcon,
   },
   {
     label: "Edit Profile",
+    navigate: "/#",
     icon: Cog6ToothIcon,
   },
   {
     label: "Inbox",
+    navigate: "/#",
     icon: InboxArrowDownIcon,
   },
   {
     label: "Help",
+    navigate: "/#",
     icon: LifebuoyIcon,
   },
   {
-    label: "Sign Out",
+    label: "Log Out",
+    navigate: "/logout",
     icon: PowerIcon,
   },
 ];
@@ -81,7 +86,7 @@ function ProfileMenu() {
         </Button>
       </MenuHandler>
       <MenuList className="p-1">
-        {profileMenuItems.map(({ label, icon }, key) => {
+        {profileMenuItems.map(({ label, navigate, icon }, key) => {
           const isLastItem = key === profileMenuItems.length - 1;
           return (
             <MenuItem
@@ -98,7 +103,8 @@ function ProfileMenu() {
                 strokeWidth: 2,
               })}
               <Typography
-                as="span"
+                as={Link}
+                to={navigate}
                 variant="small"
                 className="font-normal"
                 color={isLastItem ? "red" : "inherit"}
