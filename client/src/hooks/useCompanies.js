@@ -28,6 +28,21 @@ export function useGetAllCompanies() {
     return [companies, setCompanies];
 }
 
+export function useGetOwnedCompanies(ownerId) {
+    const [companies, setCompanies] = useState([]);
+
+    useEffect(() => {
+
+        (async () => {
+            const result = await companyAPI.getOwned(ownerId);
+
+            setCompanies(result);
+        })();
+    }, [ownerId]);
+
+    return [companies, setCompanies];
+}
+
 export function useGetOneCompany(companyId) {
     const [ company, setCompany ] = useState({});           // set state for current game
 
