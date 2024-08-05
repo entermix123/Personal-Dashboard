@@ -8,7 +8,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-top: -4rem; /* Adjust based on the height of your navbar */
+  margin-top: 0; /* Remove negative margin */
 }
 
 .dashboard-container {
@@ -18,17 +18,18 @@
 }
 
 .sidebar-toggle {
-  position: fixed;
-  top: 1rem; /* Adjust to the height of your navbar */
+  position: relative;
+  top: -3rem; /* Adjust based on your navbar height */
   left: 1rem;
-  z-index: 50;
+  z-index: 1000; /* Ensure it's above everything */
 }
 
 .dashboard-content {
   flex: 1;
   margin-left: 0;
   transition: margin-left 0.3s;
-  padding-top: 4rem; /* Adjust to the height of your navbar */
+  /* padding-top: 0.3rem; Adjust based on your navbar height */
+  /* padding-left: 6rem; Add left padding to accommodate the toggle button */
 }
 
 .dashboard-container.shifted .dashboard-content {

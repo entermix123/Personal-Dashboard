@@ -202,8 +202,8 @@ function NavListMenu() {
 // nav list component
 const navListItems = [
   {
-    label: "Companies",
-    navigate: "/company",
+    label: "My Companies",
+    navigate: "/mycompanies",
     icon: CubeTransparentIcon,
   },
   {
@@ -254,13 +254,25 @@ export default function HeaderNavbar() {
   return (
     <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as={Link}
-          to="/"
-          className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
-        >
-          DashBoard
-        </Typography>
+        <div className="flex">
+          {isAuthenticated && (
+            <Typography
+              as={Link}
+              to="/"
+              className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
+            >
+              DashBoard
+            </Typography>
+          )}
+          <Typography
+            as={Link}
+            to="/companies"
+            className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
+          >
+            Companies
+          </Typography>
+        </div>
+
         <div className="hidden lg:block">
           <NavList />
         </div>
@@ -274,29 +286,23 @@ export default function HeaderNavbar() {
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
 
-          
-          {!isAuthenticated
-            ? (
-            <div className="flex items-center space-x-4">
+        {!isAuthenticated ? (
+          <div className="flex items-center space-x-4">
             <Button size="sm" variant="text">
               <Link to="/login">Log In</Link>
             </Button>
-
             <Button size="sm" variant="text">
               <Link to="/register">Register</Link>
             </Button>
-            </div>
-            )
-            : (
-            <div className="flex items-center space-x-4">
+          </div>
+        ) : (
+          <div className="flex items-center space-x-4">
             <Button size="sm" variant="text">
               <Link to="/logout">Logout</Link>
             </Button>
             <ProfileMenu />
-            </div>
-            )
-          }
-            
+          </div>
+        )}
       </div>
     </Navbar>
   );
