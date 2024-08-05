@@ -1343,9 +1343,9 @@
             
             "e2462435-ce81-4ed8-bdc0-469f151c5c98": {
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "name": "Company 1",
+                "name": "Company Name 1",
                 "category": "Service",
-                "location": "Europe",
+                "summary": "This company produces high-quality services. Lorem ipsum dolor, sit amet consectetur adipisicing elit. At veniam perferendis esse cupiditate necessitatibus id.",
                 "employees": 30,
                 "ravenue": 50000,
                 "_createdOn": 1722519316283,
@@ -1354,13 +1354,35 @@
 
             "4a0799ec-7537-49f9-8d67-baecc0d0f50e": {
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "name": "Company 2",
+                "name": "Company Name 2",
                 "category": "Production",
-                "location": "Bulgaria",
+                "summary": "This company produces high-quality products. Lorem ipsum dolor, sit amet consectetur adipisicing elit. At veniam perferendis esse cupiditate necessitatibus id.",
                 "employees": "50",
                 "ravenue": "80000",
                 "_createdOn": 1722519843637,
                 "_id": "4a0799ec-7537-49f9-8d67-baecc0d0f50e"
+            },
+
+            "ad8df99a-7a81-4b8b-abce-810e8d8f2da4": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "name": "Company Name 3",
+                "category": "Service",
+                "summary": "This company produces high-quality services.",
+                "employees": 50,
+                "ravenue": 90000,
+                "_createdOn": 1722885165772,
+                "_id": "ad8df99a-7a81-4b8b-abce-810e8d8f2da4"
+            },
+            
+            "983b613a-6dd7-4eba-a962-2426d3f4a11c": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "name": "Company Name 4",
+                "category": "Production",
+                "summary": "This company produces high-quality automotive products.",
+                "employees": 1500,
+                "ravenue": 1000000,
+                "_createdOn": 1722885267635,
+                "_id": "983b613a-6dd7-4eba-a962-2426d3f4a11c"
             },
         },
     	recipes: {
