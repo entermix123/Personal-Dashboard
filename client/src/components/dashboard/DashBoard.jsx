@@ -48,7 +48,7 @@ export default function Dashboard() {
                                     src="https://dummyimage.com/500x300"
                                 /> */}
                                 <div className="h-full w-full">
-                                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg flex flex-col items-center">
+                                    <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center">
                                         <svg
                                             fill="none"
                                             stroke="currentColor"
@@ -74,7 +74,7 @@ export default function Dashboard() {
                                     src="https://dummyimage.com/501x301"
                                 /> */}
                                 <div className="h-full w-full">
-                                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg flex flex-col items-center">
+                                    <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center">
                                         <svg
                                             fill="none"
                                             stroke="currentColor"
@@ -118,7 +118,7 @@ export default function Dashboard() {
                                     src="https://dummyimage.com/502x302"
                                 /> */}
                                 <div className="h-full w-full">
-                                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg flex flex-col items-center">
+                                    <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center">
                                         <svg
                                             fill="none"
                                             stroke="currentColor"
@@ -143,7 +143,7 @@ export default function Dashboard() {
                                     src="https://dummyimage.com/503x303"
                                 /> */}
                                 <div className="h-full w-full">
-                                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg flex flex-col items-center">
+                                    <div className="border-2 border-gray-300 px-4 py-6 rounded-lg flex flex-col items-center">
                                         <svg
                                             fill="none"
                                             stroke="currentColor"

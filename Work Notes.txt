@@ -19,6 +19,8 @@
     terminal --> npm install react-router-dom
 - Install test library
     terminal --> npm install -D vitest
+- Install Chart library
+    terminal --> npm i apexcharts react-apexcharts
 - clean the project
     - delete src/asset folder
     - delete src/App.css
