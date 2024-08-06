@@ -10,8 +10,7 @@ export default function CompanyListItem({
     employees,
     revenue,
 }) {   
-    const { companyId } = useParams();   
-    const [comments, dispatch] = useGetAllComments(companyId);
+    const [comments, dispatch] = useGetAllComments(_id);
 
     return (
         <div className="p-4 lg:w-1/3">
