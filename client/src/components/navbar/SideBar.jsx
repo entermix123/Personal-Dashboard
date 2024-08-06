@@ -35,10 +35,9 @@ import {
 import { Link } from "react-router-dom";
 
 export function Sidebar({ isDrawerOpen, setIsDrawerOpen }) {
+  const { userId } = useAuthContext();
   const [open, setOpen] = useState(0);
   const [openAlert, setOpenAlert] = useState(true);
-  const {isAuthenticated} = useAuthContext()
-
 
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);
@@ -175,12 +174,14 @@ export function Sidebar({ isDrawerOpen, setIsDrawerOpen }) {
                 />
               </ListItemSuffix>
             </ListItem>
+            <Link to={`/users/${userId}/details`}>
             <ListItem>
               <ListItemPrefix>
                 <UserCircleIcon className="h-5 w-5" />
               </ListItemPrefix>
               Profile
             </ListItem>
+            </Link>
             <ListItem>
               <ListItemPrefix>
                 <Cog6ToothIcon className="h-5 w-5" />
