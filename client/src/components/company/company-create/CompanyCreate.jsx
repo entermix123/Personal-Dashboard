@@ -24,8 +24,8 @@ export default function CompanyCreate() {
 
     const createHandler = async (values) => {
         try {
-            const { _id: companyId } = await createCompany(values);
-            navigate(`/companies/${companyId}/details`);
+            const { _id } = await createCompany(values);
+            navigate(`/company/${_id}/details`);
         } catch (err) {
             // set error state and display error message
             console.error(err.message);
@@ -134,13 +134,13 @@ export default function CompanyCreate() {
                             color="blue-gray"
                             className="-mb-3"
                         >
-                            Ravenue
+                            Revenue
                         </Typography>
                         <Input
+                            type="number"
                             name="revenue"
                             value={values.revenue}
                             onChange={changeHandler}
-                            type="number"
                             min="1" 
                             placeholder="$" 
                             size="lg"
