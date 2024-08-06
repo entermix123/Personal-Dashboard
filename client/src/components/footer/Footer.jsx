@@ -10,8 +10,8 @@ export default function Footer() {
       <ul className="flex items-center gap-x-8">
         <li>
           <Typography
-            as="a"
-            href="#"
+            as={Link}
+            to="/aboutus"
             color="blue-gray"
             className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
           >
