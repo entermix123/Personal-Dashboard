@@ -15,6 +15,10 @@
 - install vite app with react template
     terminal --> npm create vite . -- --template react
     terminal --> npm install
+- Install Route libraly
+    terminal --> npm install react-router-dom
+- Install test library
+    terminal --> npm install -D vitest
 - clean the project
     - delete src/asset folder
     - delete src/App.css
@@ -32,8 +36,6 @@ function App() {
 export default App
 -----------------------------------------------------------------
 -create src/components folder
-- Install Route libraly
-    terminal --> npm install react-router-dom
 
 - Run client
     terminal --> npm run dev
@@ -154,6 +156,126 @@ In search field type '>snippets:Configure User Snippet' and find javascriptreact
 	}
 }
 -----------------------------------------------------------------
+
+- navigate fast between files
+    search file - Ctrl + p
+
+- format current file
+    - Alt + Shift + f   with formatters
+    - Ctrl + Shift + p  with identation
+
+
+6. Set-up test nvironment:
+
+install JS DOM - allow us to work with .document:
+	terminal/client --> npm install -D jsdom
+
+Install the test libraries:
+	terminal/client --> npm install -D @testing-library/react
+	terminal/client --> npm install -D @testing-library/jest-dom
+	terminal/client --> npm install -D @testing-library/user-event
+
+
+Set script config:
+
+In package.json add "test": "vitest":
+-----------------------------------------------------------------
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+-----------------------------------------------------------------
+
+
+Set up memory cleanup functionality:
+
+create src/tests/setup.js and add:
+-----------------------------------------------------------------
+import { cleanup } from "@testing-library/react"
+import { afterEach } from "vitest";
+import "@testing-library/jest-dom/vitest";
+
+afterEach(() => {                   // after every test call this function
+    cleanup();                      // cleans up any leftover resources
+});
+-----------------------------------------------------------------
+
+
+Config vite for test env:
+
+in vite.config.js add:
+-----------------------------------------------------------------
+// import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./src/tests/setup.js'],
+  },
+});
+-----------------------------------------------------------------
+
+
+NPM trends: Best tests usage - https://npmtrends.com/jest-vs-mocha-vs-vitest
+
+FUNCTINAL BASED APPROACH - COMMON FOLDER WITH SAME HIERARCHY 'TESTS' WITH ALL TESTS FOR ALL COMPONENTS 
+FEATURE BASED APPROACH - IN EVERY COMPONENT FOLDER THERE IS A TEST FILE - PREFERABLE !!!
+
+App.spec.jsx - BDD	Behaior Driven Development	USED IN THE DEMO
+App.test.jsx - TDD	Test Driven Development
+
+
+EXAMPLE SIMPLE TEST: Create App.spec.jsx and add:
+-----------------------------------------------------------------
+import { expect, it } from "vitest";
+import App from './App';
+
+// test('True test', () => {            // test can be changed to 'it'
+it('should be equal', () => {
+    // expect(true).toBe(true);         // same as euqal
+    // expect(true).toEqual(true);
+    // expect(true).toBe.true;          // jest
+    // expect(true).to.be.true;         // mocha + chai
+    expect(true).toBeTruthy();          // vitest
+});
+-----------------------------------------------------------------
+
+Dummy test:
+
+create src/App.test.js:
+-----------------------------------------------------------------
+import { expect, it, test } from "vitest";
+
+// test('True test', () => {               // test can be changed to 'it'
+it('should be equal', () => {
+    // expect(true).toBe(true);        // same as euqal
+    expect(true).toEqual(true);
+
+});
+-----------------------------------------------------------------
+
+Run the test:
+	terminal --> npm run test
+
+TESTS Cheat Sheet: https://testing-library.com/docs/react-testing-library/cheatsheet
+
+		No Match   1 Match	1+ Match	Await?
+getBy		throw	   return	throw		No
+findBy		throw	   return	throw		Yes
+queryBy		null	   return	throw		No
+getAllBy	throw	   array	array		No
+findAllBy	throw	   array	array		Yes
+queryAllBy 	[]	       array	array		No
+
+
 
 - navigate fast between files
     search file - Ctrl + p

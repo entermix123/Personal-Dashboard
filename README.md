@@ -52,9 +52,9 @@
 - [x] Register Form
 - [x] Login Form
 - [x] Logout
-- [ ] User Details Page
-- [ ] Add About Us Page
-- [ ] Add Contacts Page
+- [x] User Details Page
+- [x] Add About Us Page
+- [x] Add Contacts Page
 
 ## 5. Company Functionalities
 - [x] Create Company Page
@@ -62,4 +62,3 @@
 - [x] List All Companies
 - [x] Edit Company Page
 - [x] Delete Company Page
-  - [ ] Modal for company delete
