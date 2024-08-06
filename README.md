@@ -58,8 +58,8 @@
 
 ## 5. Company Functionalities
 - [x] Create Company Page
-- [ ] List Owned Companies
-- [ ] List All Companies
-- [ ] Edit Company Page
-- [ ] Delete Company Page
+- [x] List Owned Companies
+- [x] List All Companies
+- [x] Edit Company Page
+- [x] Delete Company Page
   - [ ] Modal for company delete

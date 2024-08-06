@@ -28,38 +28,41 @@ import {
 } from "@heroicons/react/24/solid";
 import { useAuthContext } from '../../context/AuthContext';
  
-// profile menu component
-const profileMenuItems = [
-  {
-    label: "My Profile",
-    navigate: "/#",
-    icon: UserCircleIcon,
-  },
-  {
-    label: "Edit Profile",
-    navigate: "/#",
-    icon: Cog6ToothIcon,
-  },
-  {
-    label: "Inbox",
-    navigate: "/#",
-    icon: InboxArrowDownIcon,
-  },
-  {
-    label: "Help",
-    navigate: "/#",
-    icon: LifebuoyIcon,
-  },
-  {
-    label: "Log Out",
-    navigate: "/logout",
-    icon: PowerIcon,
-  },
-];
+
  
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
- 
+  const { userId } = useAuthContext();
+
+  // profile menu component
+  const profileMenuItems = [
+    {
+      label: "My Profile",
+      navigate: `/users/${userId}/details`,
+      icon: UserCircleIcon,
+    },
+    {
+      label: "Edit Profile",
+      navigate: `/users/${userId}/edit`,
+      icon: Cog6ToothIcon,
+    },
+    {
+      label: "Inbox",
+      navigate: "/#",
+      icon: InboxArrowDownIcon,
+    },
+    {
+      label: "Help",
+      navigate: "/#",
+      icon: LifebuoyIcon,
+    },
+    {
+      label: "Log Out",
+      navigate: "/logout",
+      icon: PowerIcon,
+    },
+  ]; 
+
   const closeMenu = () => setIsMenuOpen(false);
  
   return (
@@ -135,7 +138,7 @@ const navListMenuItems = [
   },
   {
     title: "Go PRO",
-    navigate: "/gopro",
+    navigate: "/#",
     description:
       "Check out our premium features and services.",
   },
@@ -243,7 +246,7 @@ function NavList() {
 
 export default function HeaderNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
-  const {isAuthenticated} = useAuthContext()
+  const { isAuthenticated, userId } = useAuthContext();
 
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
@@ -258,7 +261,7 @@ export default function HeaderNavbar() {
           {isAuthenticated && (
             <Typography
               as={Link}
-              to="/"
+              to="/dashboard"
               className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
             >
               DashBoard
@@ -266,7 +269,7 @@ export default function HeaderNavbar() {
           )}
           <Typography
             as={Link}
-            to="/companies"
+            to="/"
             className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
           >
             Companies

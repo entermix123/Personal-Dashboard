@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { login, register, logout } from "../api/auth-api";
+import { login, register, update, logout } from "../api/auth-api";
 import { useAuthContext } from "../context/AuthContext";
 
 
@@ -32,6 +32,19 @@ export const useRegister = () => {
 
     return registerHandler;
 };
+
+export const useUpdate = () => {
+    const { changeAuthState } = useAuthContext();
+
+    const updateHandler = async (userId, email, password) => {
+        const { password: _,...authData } = await update(userId, email, password);  // remove password from response data
+
+        changeAuthState(authData); // update the auth state in the context using result
+    };
+
+    return updateHandler;
+};
+
 
 export const useLogout = () => {
     // rename the function in local scope to avoid naming conflict with the context logout function

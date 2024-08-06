@@ -1357,7 +1357,7 @@
                 "name": "Company Name 2",
                 "category": "Production",
                 "summary": "This company produces high-quality products. Lorem ipsum dolor, sit amet consectetur adipisicing elit. At veniam perferendis esse cupiditate necessitatibus id.",
-                "employees": "50",
+                "employees": 50,
                 "revenue": "80000",
                 "_createdOn": 1722519843637,
                 "_id": "4a0799ec-7537-49f9-8d67-baecc0d0f50e"

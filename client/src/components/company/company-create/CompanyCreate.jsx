@@ -137,7 +137,7 @@ export default function CompanyCreate() {
                             Ravenue
                         </Typography>
                         <Input
-                            name="ravenue"
+                            name="revenue"
                             value={values.revenue}
                             onChange={changeHandler}
                             type="number"
@@ -145,7 +145,7 @@ export default function CompanyCreate() {
                             placeholder="$" 
                             size="lg"
                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                            autoComplete="ravenue"
+                            autoComplete="revenue"
                             labelProps={{
                                 className:
                                     "before:content-none after:content-none",
