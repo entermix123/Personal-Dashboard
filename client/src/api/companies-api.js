@@ -28,6 +28,10 @@ export const getOne = (companyId) => requester.get(`${BASE_URL}/${companyId}`);
 
 export const create = (companyData) => requester.post(`${BASE_URL}`, companyData);
 
+export const remove = (companyId) => requester.del(`${BASE_URL}/${companyId}`);
+
+export const update = (companyId, companyData) => requester.put(`${BASE_URL}/${companyId}`, companyData);
+
 // make object and export it for mass use in other components
 const companyAPI = {
     getOne,
@@ -35,6 +39,8 @@ const companyAPI = {
     getLatest,
     getOwned,
     create,
+    update,
+    remove,
 }
 
 export default companyAPI;

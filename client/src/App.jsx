@@ -12,6 +12,7 @@ import CompanyDetails from "./components/company/company-details/CompanyDetails"
 import MyCompanyList from "./components/company/company-list/MyCompanyList";
 import AboutUs from "./components/about-us/AboutUs";
 import Layout from "./components/layout/Layout";
+import CompanyEdit from "./components/company/company-edit/CompanyEdit";
 import "./index.css";
 
 function App() {
@@ -23,13 +24,16 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path='/company/create' element={<CompanyCreate />} />
-            <Route path='/companies' element={<CompanyList />} />
-            <Route path='/mycompanies' element={<MyCompanyList />} />
             <Route path='/company/:companyId/details' element={<CompanyDetails />} />
+            <Route path='/companies' element={<CompanyList />} />
             <Route path='/contactus' element={<ContactUs />} />
             <Route path='/aboutus' element={<AboutUs />} />
+
+            <Route path='/company/create' element={<CompanyCreate />} />
+            <Route path='/mycompanies' element={<MyCompanyList />} />
+            <Route path='/company/:companyId/edit' element={<CompanyEdit />} />
             <Route path='/logout' element={<Logout />} />
+            
           </Route>
         </Routes>
       </AuthContextProvider>

@@ -7,7 +7,7 @@ export default function CompanyListItem({
     category,
     summary,
     employees,
-    ravenue,
+    revenue,
 }) {   
     return (
         <div className="p-4 lg:w-1/3">
@@ -50,7 +50,7 @@ export default function CompanyListItem({
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                             <circle cx={12} cy={12} r={3} />
                         </svg>
-                        {ravenue}
+                        {revenue}
                         </span>
                         <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                         <svg

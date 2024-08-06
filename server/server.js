@@ -1347,7 +1347,7 @@
                 "category": "Service",
                 "summary": "This company produces high-quality services. Lorem ipsum dolor, sit amet consectetur adipisicing elit. At veniam perferendis esse cupiditate necessitatibus id.",
                 "employees": 30,
-                "ravenue": 50000,
+                "revenue": 50000,
                 "_createdOn": 1722519316283,
                 "_id": "e2462435-ce81-4ed8-bdc0-469f151c5c98"
             },
@@ -1358,7 +1358,7 @@
                 "category": "Production",
                 "summary": "This company produces high-quality products. Lorem ipsum dolor, sit amet consectetur adipisicing elit. At veniam perferendis esse cupiditate necessitatibus id.",
                 "employees": "50",
-                "ravenue": "80000",
+                "revenue": "80000",
                 "_createdOn": 1722519843637,
                 "_id": "4a0799ec-7537-49f9-8d67-baecc0d0f50e"
             },

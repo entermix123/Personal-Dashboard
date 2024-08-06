@@ -15,7 +15,7 @@ const initialValues = {
     category: '',
     summary: '',
     employees: '',
-    ravenue: '',
+    revenue: '',
 };
 
 export default function CompanyCreate() {
@@ -138,7 +138,7 @@ export default function CompanyCreate() {
                         </Typography>
                         <Input
                             name="ravenue"
-                            value={values.ravenue}
+                            value={values.revenue}
                             onChange={changeHandler}
                             type="number"
                             min="1" 

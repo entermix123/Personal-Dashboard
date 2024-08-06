@@ -8,7 +8,7 @@ export default function CompanyListItem({
     summary,
     _createdOn,
     employees,
-    ravenue,
+    revenue,
 }) {   
     // Format the date
     const formattedDate = new Intl.DateTimeFormat('en-GB', {

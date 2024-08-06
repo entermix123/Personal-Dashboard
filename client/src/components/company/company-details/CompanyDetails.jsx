@@ -1,14 +1,17 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetOneCompany } from "../../../hooks/useCompanies";
 import { useForm } from "../../../hooks/useForm";
 import { useCreateComment, useGetAllComments } from "../../../hooks/useComments";
 import { useAuthContext } from "../../../context/AuthContext";
+import companyAPI from "../../../api/companies-api";
+import { Button } from "@material-tailwind/react";
 
 const initialValues = {
     comment: ''
 };
 
 export default function CompanyDetails() {
+    const navigate = useNavigate();
     const { companyId } = useParams();                    // useParams take specific property of the game
     const [comments, dispatch] = useGetAllComments(companyId);
     const createComment = useCreateComment();
@@ -35,12 +38,28 @@ export default function CompanyDetails() {
 
     const isOwner = userId === company._ownerId;   // check if current user is the owner of the game
 
+    const companyDeleteHandler = async () => {     // set game delete functionality
+        const isConfirmed = confirm(`Are you sure you want to delete ${company.name} Comapnu?`);     // set game delete pop-up confirmation box 
+        // TODO: implement Modal dialog
+        if (!isConfirmed) {     // check if user confirmed the deletion
+            return;
+        }
+
+        try {
+            await companyAPI.remove(companyId)           // delete game
+
+            navigate('/');
+        } catch (err) {                             // check for error
+            console.error(err.message);
+        }
+    }
+    
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
                 <div className="text-center mb-20">
                 <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
-                    Raw Denim Heirloom Man Braid
+                    {company.name}
                 </h1>
                 <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
                     {company.summary}
@@ -66,27 +85,11 @@ export default function CompanyDetails() {
                     </div>
                     <div className="flex-grow">
                     <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                        Shooting Stars
+                        The company has yearly revenue of
                     </h2>
                     <p className="leading-relaxed text-base">
-                        Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                        taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
-                        pug VHS try-hard.
+                        ${company.revenue}
                     </p>
-                    <a className="mt-3 text-indigo-500 inline-flex items-center">
-                        Learn More
-                        <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                        >
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
                     </div>
                 </div>
                 <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
@@ -107,27 +110,11 @@ export default function CompanyDetails() {
                     </div>
                     <div className="flex-grow">
                     <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                        The Catalyzer
+                        This company is type
                     </h2>
                     <p className="leading-relaxed text-base">
-                        Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                        taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
-                        pug VHS try-hard.
+                        {company.category}
                     </p>
-                    <a className="mt-3 text-indigo-500 inline-flex items-center">
-                        Learn More
-                        <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                        >
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
                     </div>
                 </div>
                 <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
@@ -147,27 +134,11 @@ export default function CompanyDetails() {
                     </div>
                     <div className="flex-grow">
                     <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                        Neptune
+                        This company has count of employees:
                     </h2>
                     <p className="leading-relaxed text-base">
-                        Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                        taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
-                        pug VHS try-hard.
+                        {company.employees}
                     </p>
-                    <a className="mt-3 text-indigo-500 inline-flex items-center">
-                        Learn More
-                        <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                        >
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
                     </div>
                 </div>
                 </div>            
@@ -175,17 +146,29 @@ export default function CompanyDetails() {
 
                 {isOwner && (
                     <div className="flex justify-center gap-4 mt-16">
-                        <button className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                            <Link to="company/edit">
+                    <Link to={`/company/${companyId}/edit`}>
+                        <Button
+                            size="lg"
+                            variant="outlined"
+                            color="blue-gray"
+                            className="flex items-center gap-3"
+                            onClick={changeHandler}
+                            >
                             Edit Company
-                            </Link>
-                        </button>
+                        </Button>
+                    </Link>
 
-                        <button className="text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                            <Link to="company/delete">
-                            Delete Company
-                            </Link>
-                        </button>
+                    <Button
+                        size="lg"
+                        variant="outlined"
+                        color="blue-gray"
+                        className="flex items-center gap-3"
+                        onClick={companyDeleteHandler}
+                        style={{ backgroundColor: 'rgba(255, 0, 0, 0.1)' }} // transparent red
+                    >
+                        Delete Company
+                    </Button>
+
                     </div>
                     )
                 }
@@ -203,10 +186,14 @@ export default function CompanyDetails() {
                         {comments.map(comment => (
                             <div key={comment._id} className="p-4 lg:w-1/3 md:w-1/2 w-full">
                                 <div className="h-full bg-gray-100 p-8 rounded">
-                                    <p className="leading-relaxed mb-6">{comment.text}</p>
+                                    <p className="leading-relaxed mb-6">
+                                        {comment.text}
+                                    </p>
                                     <div className="inline-flex items-center">
                                         <span className="flex-grow flex flex-col pl-4">
-                                            <span className="title-font font-medium text-gray-900">{comment.author.email}</span>
+                                            <span className="title-font font-medium text-gray-900">
+                                                {comment.author.email}
+                                            </span>
                                         </span>
                                     </div>
                                 </div>
@@ -251,70 +238,3 @@ export default function CompanyDetails() {
 
     );
     }
-
-
-
-    
-
-
-
-    //     <section id="game-details">
-    //     <h1>Game Details</h1>
-    //     <div className="info-section">
-
-    //         <div className="game-header">
-    //             <img className="game-img" src={game.imageUrl} />
-    //             <h1>{game.title}</h1>
-    //             <span className="levels">MaxLevel: {game.maxLevel}</span>
-    //             <p className="type">{game.category}</p>
-    //         </div>
-
-    //         <p className="text">{game.summary}</p>
-
-    //         {/* <!-- Bonus ( for Guests and Users ) --> */}
-    //         <div className="details-comments">
-    //             <h2>Comments:</h2>
-    //             <ul>
-    //                 {comments.map(comment => (     
-    //                         <li key={comment._id} className="comment">
-    //                             <p>{comment.author.email}: {comment.text}</p>
-    //                         </li>
-    //                     ))
-    //                 }
-    //             </ul>
-    //             {comments.length === 0 && <p className="no-comment">No comments.</p>}
-    //         </div>
-
-    //         {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
-    //         {isOwner && 
-    //         (<div className="buttons">
-    //             <a href="#" className="button">Edit</a>
-    //             <a href="#" className="button">Delete</a>
-    //         </div>
-    //         )}
-            
-    //     </div>
-
-    //     {/* <!-- Bonus --> */}
-    //     {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
-    //     {isAuthenticated && (
-    //         <article className="create-comment">
-    //         <label>Add new comment:</label>
-    //         <form className="form" onSubmit={submitHandler}>
-    //             <textarea 
-    //                 name="comment" 
-    //                 placeholder="Comment......"
-    //                 value={values.comment}
-    //                 onChange={changeHandler}
-    //             ></textarea>
-
-    //             <input 
-    //                 className="btn submit" 
-    //                 type="submit" 
-    //                 value="Add Comment" 
-    //             />
-    //         </form>
-    //     </article>
-    //     )}
-
-    // </section>

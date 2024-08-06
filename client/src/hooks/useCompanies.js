@@ -44,7 +44,13 @@ export function useGetOwnedCompanies(ownerId) {
 }
 
 export function useGetOneCompany(companyId) {
-    const [ company, setCompany ] = useState({});           // set state for current game
+    const [ company, setCompany ] = useState({                      // set state for current company as empty object
+        name: '',
+        category: '',
+        summary: '',
+        employees: '',
+        ravenue: '',
+    });   
 
 
     useEffect(() => {                                               // set useEffect to change current company content
