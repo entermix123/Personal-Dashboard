@@ -14,8 +14,10 @@
         "@headlessui/react": "^2.1.2",
         "@heroicons/react": "^2.1.5",
         "@material-tailwind/react": "^2.1.9",
+        "apexcharts": "^3.52.0",
         "client": "file:",
         "react": "^18.3.1",
+        "react-apexcharts": "^1.4.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.25.1",
         "tw-elements": "^2.0.0"
