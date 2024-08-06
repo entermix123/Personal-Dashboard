@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import React from "react";
 import {
   Navbar,
-  MobileNav,
   Typography,
   Button,
   Menu,
@@ -211,12 +210,12 @@ const navListItems = [
   },
   {
     label: "Staff",
-    navigate: "/staff",
+    navigate: "/#",
     icon: UserCircleIcon,
   },
   {
     label: "Docs",
-    navigate: "/docs",
+    navigate: "/#",
     icon: CodeBracketSquareIcon,
   },
 ];
@@ -245,7 +244,7 @@ function NavList() {
 }
 
 export default function HeaderNavbar() {
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const [ isNavOpen, setIsNavOpen ] = React.useState(false);
   const { isAuthenticated, userId } = useAuthContext();
 
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);

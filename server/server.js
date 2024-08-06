@@ -1358,7 +1358,7 @@
                 "category": "Production",
                 "summary": "This company produces high-quality products. Lorem ipsum dolor, sit amet consectetur adipisicing elit. At veniam perferendis esse cupiditate necessitatibus id.",
                 "employees": 50,
-                "revenue": "80000",
+                "revenue": 80000,
                 "_createdOn": 1722519843637,
                 "_id": "4a0799ec-7537-49f9-8d67-baecc0d0f50e"
             },
@@ -1368,8 +1368,8 @@
                 "name": "Company Name 3",
                 "category": "Service",
                 "summary": "This company produces high-quality services.",
-                "employees": 50,
-                "ravenue": 90000,
+                "employees": 70,
+                "revenue": 90000,
                 "_createdOn": 1722885165772,
                 "_id": "ad8df99a-7a81-4b8b-abce-810e8d8f2da4"
             },
@@ -1379,8 +1379,8 @@
                 "name": "Company Name 4",
                 "category": "Production",
                 "summary": "This company produces high-quality automotive products.",
-                "employees": 1500,
-                "ravenue": 1000000,
+                "employees": 150,
+                "revenue": 1000000,
                 "_createdOn": 1722885267635,
                 "_id": "983b613a-6dd7-4eba-a962-2426d3f4a11c"
             },
