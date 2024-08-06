@@ -85,13 +85,12 @@ export default function AboutUs() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    className="sm:w-16 sm:h-16 w-10 h-10"
+                    className="w-12 h-12"
                     viewBox="0 0 24 24"
-                    >
-                    <circle cx={6} cy={6} r={3} />
-                    <circle cx={6} cy={18} r={3} />
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
-                    </svg>
+                >
+                    <circle cx={12} cy={5} r={3} />
+                    <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3" />
+                </svg>
                     
                 </div>
                 <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">

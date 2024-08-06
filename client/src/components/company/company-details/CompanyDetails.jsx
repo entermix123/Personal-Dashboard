@@ -103,10 +103,9 @@ export default function CompanyDetails() {
                         className="w-10 h-10"
                         viewBox="0 0 24 24"
                     >
-                        <circle cx={6} cy={6} r={3} />
-                        <circle cx={6} cy={18} r={3} />
-                        <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
                     </svg>
+
                     </div>
                     <div className="flex-grow">
                     <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
