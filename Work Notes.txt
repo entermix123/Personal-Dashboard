@@ -262,6 +262,39 @@ it('should be equal', () => {
 });
 -----------------------------------------------------------------
 
+create components/counter/Counter.spec.jsx and add: - example tests
+-----------------------------------------------------------------
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { userEvent } from '@testing-library/user-event';
+import Counter from "./Counter";
+
+// every functionality is different describe
+
+describe('Counter component', () => {
+
+    // describe test case
+    it('Should have zero value on initially created counter', () => {
+        render(<Counter />);
+
+        const countElement = screen.getByText('0');
+        // const countElement = screen.getByText('0', {selector: 'p' });
+
+        expect(countElement).toBeVisible();
+    });
+
+    // describe test case
+    it ('Should increment the counter by one when button is clicked', async () => {
+        render(<Counter />)                                             // render the component
+        await userEvent.click(screen.getByText('Increment'));           // simulate click on the counter button
+        const countElement = screen.getByText('1');                     // get the element with the updated count
+        expect(countElement).toBeVisible();                             // check if the element with correct result is visible
+        screen.debug();                                                 // visualize the HTML of the component
+
+    })
+});
+-----------------------------------------------------------------
+
 Run the test:
 	terminal --> npm run test
 
