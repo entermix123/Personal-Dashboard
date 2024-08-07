@@ -31,16 +31,16 @@ export default function CompanyCreate() {
             return setError("Company name must be at least 3 characters long");
         }
 
+        if (values.category === "") {
+            return setError("Company must have category");
+        }
+
         if (values.employees < 1) {
             return setError("Company must be at least 1 employee");
         }
 
         if (values.revenue < 1) {
             return setError("Company revenue must have at least $1 revenue");
-        }
-
-        if (values.category === "") {
-            return setError("Company must have category");
         }
 
         try {

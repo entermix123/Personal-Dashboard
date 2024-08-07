@@ -20,6 +20,11 @@ export default function CompanyEdit() {
             return false;
         }
 
+        if (values.category === "") {
+            setError("Company must have a category");
+            return false;
+        }
+
         if (values.employees < 1) {
             setError("Company must have at least 1 employee");
             return false;
@@ -27,11 +32,6 @@ export default function CompanyEdit() {
 
         if (values.revenue < 1) {
             setError("Company revenue must have at least $1 revenue");
-            return false;
-        }
-
-        if (values.category === "") {
-            setError("Company must have a category");
             return false;
         }
 

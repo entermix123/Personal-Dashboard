@@ -26,16 +26,16 @@ export default function Register() {
 
     const registerHandler = async (values) => {
 
+        if (!validateEmail(values.email)) {
+            return setError("Invalid email format");
+        }
+
         if (values.password.length < 3) {
             return setError("Password must be at least 3 characters long");
         }
 
         if (values.password !== values["confirm-password"]) {
             return setError("Passwords missmatch");             // if passwords do not match show error
-        }
-
-        if (!validateEmail(values.email)) {
-            return setError("Invalid email format");
         }
 
         try {
