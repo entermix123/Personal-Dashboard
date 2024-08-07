@@ -16,12 +16,13 @@ export default function UserDetails() {
     }, 0);
 
     const totalEmployees = companies.reduce((sum, company) => {
-        return sum + (company.employees || 0); // Handling potential undefined values
+        return sum + (parseInt(company.employees, 10) || 0); // Convert employees to number
     }, 0);
 
     const userDeleteHandler = async () => {     // set user delete functionality
 
         const isConfirmed = confirm(`Are you sure you want to delete your Profile?`);
+
         // TODO: implement Modal dialog
         if (!isConfirmed) {     // check if user confirmed the deletion
             return;
@@ -102,7 +103,7 @@ export default function UserDetails() {
                         <path d="M22 4L12 14.01l-3-3" />
                     </svg>
                     <span className="title-font font-medium">
-                        Total Ravenue: {totalRevenue}
+                        Total Ravenue: $ {totalRevenue}
                     </span>
                     </div>
                 </div>
