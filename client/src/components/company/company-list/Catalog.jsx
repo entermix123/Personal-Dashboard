@@ -1,7 +1,7 @@
 import { useGetAllCompanies } from "../../../hooks/useCompanies";
 import CompanyListItem from "./company-list-item/CompanyListItem";
 
-export default function CompanyList() {
+export default function Catalog() {
     const [ companies ] = useGetAllCompanies();
 
     return (

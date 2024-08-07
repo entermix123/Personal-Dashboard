@@ -7,7 +7,7 @@ import Dashboard from "./components/dashboard/DashBoard";
 import Login from "./components/user/login/Login";
 import ContactUs from "./components/contact-us/ContactUs";
 import CompanyCreate from "./components/company/company-create/CompanyCreate";
-import CompanyList from "./components/company/company-list/CompanyList";
+import Catalog from "./components/company/company-list/Catalog";
 import CompanyDetails from "./components/company/company-details/CompanyDetails";
 import MyCompanyList from "./components/company/company-list/MyCompanyList";
 import AboutUs from "./components/about-us/AboutUs";
@@ -24,7 +24,7 @@ function App() {
         <AuthContextProvider>
         <Routes>
           <Route element={<Layout />}>
-            <Route path='/' element={<CompanyList />} />
+            <Route path='/' element={<Catalog />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path='/company/:companyId/details' element={<CompanyDetails />} />

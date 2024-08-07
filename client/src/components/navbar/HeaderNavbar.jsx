@@ -282,7 +282,7 @@ export default function HeaderNavbar() {
                     )}
                     <Link to="/">
                         <Button size="sm" variant="text">
-                            Companies
+                            Catalog
                         </Button>
                     </Link>
                 </div>
