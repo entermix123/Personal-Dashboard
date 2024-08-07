@@ -18,11 +18,22 @@ export default function Register() {
     const register = useRegister();
     const navigate = useNavigate();
 
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
+
     const registerHandler = async (values) => {
-        // make simple validation for password match
+
+
         if (values.password !== values["confirm-password"]) {
             return setError("Passwords missmatch");             // if passwords do not match show error
         }
+
+        if (!validateEmail(values.email)) {
+            return setError("Invalid email format");
+        }
+
         try {
             await register(values.email, values.password);      // try to register with provided email and password
 

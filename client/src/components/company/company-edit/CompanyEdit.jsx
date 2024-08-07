@@ -128,15 +128,15 @@ export default function CompanyEdit() {
                             Ravenue
                         </Typography>
                         <Input
-                            name="ravenue"
-                            value={values.ravenue}
+                            name="revenue"
+                            value={values.revenue}
                             onChange={changeHandler}
                             type="number"
                             min="1" 
                             placeholder="$" 
                             size="lg"
                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                            autoComplete="ravenue"
+                            autoComplete="revenue"
                             labelProps={{
                                 className:
                                     "before:content-none after:content-none",
