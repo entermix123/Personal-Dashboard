@@ -1,29 +1,41 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../../../hooks/useForm"
+import { useState } from "react";
 import { useLogin } from "../../../hooks/useAuth"
 import { Button, Card, Input, Typography } from "@material-tailwind/react";
+import { AlertGost } from "../../alerts/AlertGost";
 
 // define initial values for form fields
 const initialValues = { email: "", password: "" }
 
-export default function Login() {
-    // import the useLogin hook from the auth hook file
-    const login = useLogin();
+const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+};
 
-    // import the useNavigate hook from react-router-dom to navigate to the home page
+export default function Login() {
+    const [error, setError] = useState("");
+    const login = useLogin();
     const navigate = useNavigate(); 
 
-    // create a login handler function
+
     const loginHandler = async ({ email, password }) => {
+
+        if (!validateEmail(values.email)) {
+            return setError("Invalid email format");
+        }
+
         try {
             await login(email, password);   // try to login with provided email and password
+            resetForm();
             navigate("/");                  // navigate after successful login
         } catch (err) {
+            setError(err.message);
             console.error(err.message);
         }
     }
     // use the useForm hook to manage form state and handle form submission
-    const { values, changeHandler, submitHandler } = useForm(initialValues, loginHandler);
+    const { values, changeHandler, submitHandler, resetForm } = useForm(initialValues, loginHandler);
     
         return (
             <div className="flex items-center justify-center min-h-screen">
@@ -80,6 +92,9 @@ export default function Login() {
                             />
     
                         </div>
+                        {error && (
+                            <AlertGost message={error} />
+                        )}
                         
                         <Button  
                             type="submit"

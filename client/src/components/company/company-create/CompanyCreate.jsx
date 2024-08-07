@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useForm } from "../../../hooks/useForm";
 import { useCreateCompany} from "../../../hooks/useCompanies";
 import { useNavigate } from "react-router-dom";
+import { AlertGost } from "../../alerts/AlertGost";
 
 import {
     Card,
@@ -19,20 +21,40 @@ const initialValues = {
 };
 
 export default function CompanyCreate() {
+    const [error, setError] = useState("");
     const navigate = useNavigate();
     const createCompany = useCreateCompany();
 
     const createHandler = async (values) => {
+
+        if (values.name.length < 3) {
+            return setError("Company name must be at least 3 characters long");
+        }
+
+        if (values.employees < 1) {
+            return setError("Company must be at least 1 employee");
+        }
+
+        if (values.revenue < 1) {
+            return setError("Company revenue must have at least $1 revenue");
+        }
+
+        if (values.category === "") {
+            return setError("Company must have category");
+        }
+
         try {
             const { _id } = await createCompany(values);
+            resetForm();
             navigate(`/company/${_id}/details`);
+            
         } catch (err) {
-            // set error state and display error message
+            setError(err.message);                              // if error occurred show error message
             console.error(err.message);
         }
     };
 
-    const { values, changeHandler, submitHandler } = useForm(initialValues, createHandler);
+    const { values, changeHandler, submitHandler, resetForm } = useForm(initialValues, createHandler);
 
     return (
         <div className="flex items-center justify-center min-h-screen">
@@ -151,8 +173,10 @@ export default function CompanyCreate() {
                                     "before:content-none after:content-none",
                             }}
                         />
-
                     </div>
+                    {error && (
+                        <AlertGost message={error} />
+                    )}
                     <Button  
                         type="submit"
                         value="Register" 

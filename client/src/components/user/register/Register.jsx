@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRegister } from "../../../hooks/useAuth";
 import { useForm } from "../../../hooks/useForm";
 import { useState } from "react";
+import { AlertGost } from "../../alerts/AlertGost";
 
 import {
     Card,
@@ -25,6 +26,9 @@ export default function Register() {
 
     const registerHandler = async (values) => {
 
+        if (values.password.length < 3) {
+            return setError("Password must be at least 3 characters long");
+        }
 
         if (values.password !== values["confirm-password"]) {
             return setError("Passwords missmatch");             // if passwords do not match show error
@@ -36,7 +40,7 @@ export default function Register() {
 
         try {
             await register(values.email, values.password);      // try to register with provided email and password
-
+            resetForm();                                        // reset form
             navigate("/");                                      // navigate after successful register
         } catch (err) {
             setError(err.message);                              // if error occurred show error message
@@ -45,7 +49,7 @@ export default function Register() {
     };
 
     // useForm hook to manage form state and handle
-    const { values, changeHandler, submitHandler } = useForm(
+    const { values, changeHandler, submitHandler, resetForm } = useForm(
         initialValues,
         registerHandler
     );
@@ -139,6 +143,9 @@ export default function Register() {
                         }
                         containerProps={{ className: "-ml-2.5" }}
                     />
+                    {error && (
+                        <AlertGost message={error} />
+                    )}
                     <Button  
                         type="submit"
                         value="Register" 

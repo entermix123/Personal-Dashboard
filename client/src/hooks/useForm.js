@@ -1,13 +1,13 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
-export function useForm(initialValues, submitCallback, reinitializeFomr = false) {
+export function useForm(initialValues, submitCallback, reinitializeForm = false) {
     const [values, setValues] = useState(initialValues);
 
     useEffect(() => {
-        if (reinitializeFomr) {
+        if (reinitializeForm) {
             setValues(initialValues);       // reinitialize form values
         }
-    }, [initialValues, reinitializeFomr]);
+    }, [initialValues, reinitializeForm]);
 
     const changeHandler = (e) => {
         setValues(state => ({
@@ -18,16 +18,18 @@ export function useForm(initialValues, submitCallback, reinitializeFomr = false)
 
     const submitHandler = (e) => {
         e.preventDefault();
-
         submitCallback(values);
-
-        setValues(initialValues);   // clear form
     }
     
+    // Add a new function to manually reset the form
+    const resetForm = () => {
+        setValues(initialValues);
+    }
+
     return {
         values,
         changeHandler,
-        submitHandler
+        submitHandler,
+        resetForm     
     }
-
 }
