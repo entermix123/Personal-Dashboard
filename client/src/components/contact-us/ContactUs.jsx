@@ -1,5 +1,3 @@
-import HeaderNavbar from "../navbar/HeaderNavbar";
-
 export default function ContactUs() {
     return (
         <section className="text-gray-600 body-font relative">

@@ -3,9 +3,9 @@ import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Sidebar } from "../navbar/SideBar";
 import { useAuthContext } from "../../context/AuthContext";
-import "./dashboard..css";
 import LineChart from "./charts/LineChart";
 import BarChart from "./charts/BarChart";
+import "./dashboard..css";
 
 export default function Dashboard() {
     const { email } = useAuthContext();

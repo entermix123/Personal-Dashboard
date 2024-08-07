@@ -45,7 +45,7 @@ export function AuthContextProvider(props) {
 }
 
 
-// small optimization for performance
+// optimization for performance
 // eslint-disable-next-line react-refresh/only-export-components
 export function useAuthContext() {
     const authData = useContext(AuthContext);

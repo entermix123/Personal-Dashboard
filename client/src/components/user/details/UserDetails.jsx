@@ -16,7 +16,7 @@ export default function UserDetails() {
     }, 0);
 
     const totalEmployees = companies.reduce((sum, company) => {
-        return sum + (parseInt(company.employees, 10) || 0); // Convert employees to number
+        return sum + (parseInt(company.employees, 10) || 0);     
     }, 0);
 
     const userDeleteHandler = async () => {     // set user delete functionality

@@ -4,7 +4,7 @@ import { useLogout } from '../../../hooks/useAuth'
 export default function Logout() {
     const logout = useLogout();
 
-    logout(); // Call the logout function when the component mounts
+    logout();
 
-    return <Navigate to="/" />              // redirect to home page
+    return <Navigate to="/" /> 
 }

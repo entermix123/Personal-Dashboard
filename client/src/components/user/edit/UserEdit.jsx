@@ -22,7 +22,7 @@ export default function UserEdit() {
         changeHandler,
         submitHandler,
         values,
-    } = useForm(user.Object, async (values) => {             // update game object with values from form
+    } = useForm(user.Object, async (values) => {             // update user object with values from form - not accessable for this server
 
         // TODO: implement Modal Component
         const isConfirmed = confirm('Are you sure you want to update this company?');  //  set basic confirmation dialog box 

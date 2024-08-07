@@ -7,7 +7,7 @@ function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <HeaderNavbar className="fixed top-0 left-0 right-0 z-50 bg-white" />
-      <main className="flex-grow"> {/* Adjust 64px to match your navbar height */}
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />

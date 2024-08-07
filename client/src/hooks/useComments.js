@@ -11,9 +11,9 @@ export function useCreateComment() {
 function commentsReducer(state, action) {
     
     switch (action.type) {
-        case "GET_ALL":                         // if type actions is specific (GET_ALL)
+        case "GET_ALL":                         // if type actions is GET_ALL
             return action.payload.slice();      // set shallow copy of the array if the state (result) edited
-        case 'ADD_COMMENT':                     // if type actions is specific (ADD_COMMENT)
+        case 'ADD_COMMENT':                     // if type actions is ADD_COMMENT
             return [...state, action.payload];  // add new comment to the state array
 
         default:                            
@@ -22,7 +22,7 @@ function commentsReducer(state, action) {
 }
 
 export function useGetAllComments(companyId) {
-    const [comments, dispatch] = useReducer(commentsReducer, []); // change to useReducer that receive a reducer function and initial state
+    const [comments, dispatch] = useReducer(commentsReducer, []); //  useReducer receive a reducer function and initial state
 
     useEffect(() => {
         (async () => {

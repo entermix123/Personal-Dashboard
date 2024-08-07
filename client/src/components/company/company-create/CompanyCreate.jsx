@@ -49,7 +49,7 @@ export default function CompanyCreate() {
             navigate(`/company/${_id}/details`);
             
         } catch (err) {
-            setError(err.message);                              // if error occurred show error message
+            setError(err.message);    
             console.error(err.message);
         }
     };
@@ -121,7 +121,7 @@ export default function CompanyCreate() {
                             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                             autoComplete="summary"
                             rows={4}
-                            variant="outlined" // or "filled" or "standard" depending on your design preference
+                            variant="outlined"
                             inputlabelprops={{
                                 className: "before:content-none after:content-none",
                             }}

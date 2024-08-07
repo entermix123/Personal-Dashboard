@@ -42,7 +42,7 @@ export default function CompanyDetails() {
         }
     );
 
-    const isOwner = userId === company._ownerId; // check if current user is the owner of the game
+    const isOwner = userId === company._ownerId; // check if current user is the owner of the company
 
     const companyDeleteHandler = () => {
         setIsDeleteDialogOpen(true);
@@ -165,7 +165,7 @@ export default function CompanyDetails() {
                             color="blue-gray"
                             className="flex items-center gap-3"
                             onClick={companyDeleteHandler}
-                            style={{ backgroundColor: "rgba(255, 0, 0, 0.1)" }} // transparent red
+                            style={{ backgroundColor: "rgba(255, 0, 0, 0.1)" }}
                         >
                             Delete Company
                         </Button>

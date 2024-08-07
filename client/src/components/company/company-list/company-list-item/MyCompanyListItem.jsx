@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useGetAllComments } from "../../../../hooks/useComments";
 
 /* eslint-disable react/prop-types */
@@ -10,7 +10,7 @@ export default function CompanyListItem({
     employees,
     revenue,
 }) {   
-    const [comments, dispatch] = useGetAllComments(_id);
+    const [comments] = useGetAllComments(_id);
 
     return (
         <div className="p-4 lg:w-1/3">

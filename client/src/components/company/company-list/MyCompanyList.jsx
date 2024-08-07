@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function MyCompanyList() {
     const { userId } = useAuthContext();
-    const [ companies ] = useGetOwnedCompanies(userId);     // imported from useGames.js
+    const [ companies ] = useGetOwnedCompanies(userId);
     
 return (
     <section className="text-gray-600 body-font">

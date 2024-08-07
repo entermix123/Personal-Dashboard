@@ -28,12 +28,13 @@ export default function Login() {
         try {
             await login(email, password);   // try to login with provided email and password
             resetForm();
-            navigate("/");                  // navigate after successful login
+            navigate("/dashboard");         // navigate after successful login
         } catch (err) {
             setError(err.message);
             console.error(err.message);
         }
     }
+
     // use the useForm hook to manage form state and handle form submission
     const { values, changeHandler, submitHandler, resetForm } = useForm(initialValues, loginHandler);
     
