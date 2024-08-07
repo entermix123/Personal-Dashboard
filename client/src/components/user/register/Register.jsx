@@ -15,6 +15,7 @@ import {
 const initialValues = { email: "", password: "", "confirm-password": "" };
 
 export default function Register() {
+    const [isChecked, setIsChecked] = useState(false);
     const [error, setError] = useState("");
     const register = useRegister();
     const navigate = useNavigate();
@@ -36,6 +37,10 @@ export default function Register() {
 
         if (values.password !== values["confirm-password"]) {
             return setError("Passwords missmatch");             // if passwords do not match show error
+        }
+
+        if (!isChecked) {
+            return setError("Read and agree to Terms and Conditions to continue");
         }
 
         try {
@@ -132,7 +137,7 @@ export default function Register() {
                                 color="gray"
                                 className="flex items-center font-normal"
                             >
-                                I agree the
+                                    I agree the
                                 <a
                                     href="#"
                                     className="font-medium transition-colors hover:text-gray-900"
@@ -142,6 +147,8 @@ export default function Register() {
                             </Typography>
                         }
                         containerProps={{ className: "-ml-2.5" }}
+                        onChange={(e) => setIsChecked(e.target.checked)}
+                        checked={isChecked}
                     />
                     {error && (
                         <AlertGost message={error} />
