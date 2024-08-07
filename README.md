@@ -1,5 +1,5 @@
 # Personal-Dashboard
-## Project Defense - ReactJS Course July 2024 - https://softuni.bg/trainings/4529/reactjs-june-2024
+## Project Defense - ReactJS Course 10-11 July 2024 - https://softuni.bg/trainings/4529/reactjs-june-2024
 ## Project Description
 ### The project is developed with basic functionalities in focus on company management, data visualization and business strategies.<br><br>
 
@@ -18,7 +18,7 @@
 <br>
 <br>
 
-## My Companies View view:
+## My Companies view:
 <img src="image-3.png" alt="alt text" width="800"/>
 <br>
 <br>
