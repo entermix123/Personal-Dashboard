@@ -9,7 +9,7 @@
   - navigate to server folder and start server
       * terminal --> cd server
       * terminal --> node server.js
-  - navigate to client folder
+  - in new terminal navigate to client folder
       * terminal --> cd client
     - install dependencies
       * terminal --> npm install
@@ -61,4 +61,7 @@
 - [x] List Owned Companies
 - [x] List All Companies
 - [x] Edit Company Page
+  - [x] Input data validation
+  - [x] Confirmation dialog
 - [x] Delete Company Page
+  - [x] Confirmation dialog
