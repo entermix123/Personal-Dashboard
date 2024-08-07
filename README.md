@@ -3,6 +3,28 @@
 ## Project Description
 ### The project is developed with basic functionalities in focus on company management, data visualization and business strategies.<br><br>
 
+<br>
+
+## Dashboard view
+<br>
+<img src="image-1.png" alt="alt text" width="800"/>
+<br>
+<br>
+<br>
+
+## Catalog view:
+<img src="image-2.png" alt="alt text" width="800"/>
+<br>
+<br>
+<br>
+
+## My Companies View view:
+<img src="image-3.png" alt="alt text" width="800"/>
+<br>
+<br>
+<br>
+
+
 # You can start the project locally by following these steps:
 ## 1. Download the repo on your computer
 ## 2. Open the project with VSCode or other IDE
@@ -19,8 +41,10 @@
     * browser --> http://localhost:5173/
 
 <br>
+<br>
+<br>
 
-## The following is plan for developing this project:
+## Development plan:
 
 ## 1. Initialize Project
 - [x] Initialize git repo
