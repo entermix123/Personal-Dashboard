@@ -290,18 +290,24 @@ export default function HeaderNavbar() {
 
         {!isAuthenticated ? (
           <div className="flex items-center space-x-4">
-            <Button size="sm" variant="text">
-              <Link to="/login">Log In</Link>
-            </Button>
-            <Button size="sm" variant="text">
-              <Link to="/register">Register</Link>
-            </Button>
+            <Link to="/login">
+              <Button  size="sm" variant="text">
+                Log In
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button size="sm" variant="text">
+                Register
+              </Button>
+            </Link>
           </div>
         ) : (
           <div className="flex items-center space-x-4">
-            <Button size="sm" variant="text">
-              <Link to="/logout">Logout</Link>
-            </Button>
+            <Link to="/logout">
+              <Button size="sm" variant="text">
+                Logout
+              </Button>
+            </Link>
             <ProfileMenu />
           </div>
         )}
